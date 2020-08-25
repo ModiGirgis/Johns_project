@@ -1,0 +1,125 @@
+@import 'globals';
+@import url(https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Open+Sans:wght@300;400;800&display=swap);
+
+.gameScreen {
+  margin-top: -50px;
+  margin-bottom: 75px;
+}
+
+.rightSide {
+  overflow: hidden;
+}
+
+.wordList {
+  overflow-y: scroll;
+  height: 250px; //250px
+  width: 200px;
+  border: 1px solid $soft-grey;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 0px 20px 0px 20px;
+}
+
+.wordListLabel {
+  @extend .horizontallyCentered;
+  color: $text-grey;
+  margin-bottom: 15px;
+}
+
+.wordEntry {
+  margin: 5px 0px;
+  width: 100%;
+  color: $text-grey;
+  font-style: italic;
+}
+
+.entryBox {
+  width: 220px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid $soft-grey;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+.board {
+  margin: 0px 20px 20px 20px;
+}
+
+.horizontalSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tileRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.clickableTile,
+.disabledTile {
+  @extend .horizontallyCentered;
+  position: relative; /* For positioning the pseudo-element */
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  width: 30px;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 10px;
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 40px;
+  font-family: 'Didact Gothic', sans-serif;
+}
+
+.clickableTile::before,
+.disabledTile::before {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 10px;
+  box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 500ms;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.clickedTile {
+  background-color: $soft-green;
+}
+
+.clickableTile:hover:not(.clickedTile) {
+  background-color: $soft-grey;
+}
+
+.clickableTile:hover {
+  cursor: pointer;
+}
+
+.clickableTile:hover::before {
+  opacity: 1;
+}
+
+.timer {
+  @extend .horizontallyCentered;
+  margin: 40px 0px;
+  width: 100%;
+  font-size: 30px;
+  color: $soft-grey;
+}
+
+.timerText {
+  margin-left: 10px;
+  line-height: 30px;
+}
+
+.boardButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0px 20px;
+}

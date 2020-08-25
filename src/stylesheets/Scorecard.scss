@@ -1,0 +1,56 @@
+@import 'globals';
+
+.scorecard {
+  width: 200px;
+  border: 1px solid $soft-grey;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px 20px 30px 20px;
+}
+
+.scoreCardLabel {
+  @extend .horizontallyCentered;
+  color: $text-grey;
+  margin-bottom: 15px;
+}
+
+.scoreEntry {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5px 0px;
+  width: 100%;
+  color: $text-grey;
+}
+
+.scoreWord {
+  font-style: italic;
+}
+
+.badWord {
+  text-decoration: line-through;
+  color: $dark-error;
+}
+
+.goodWord {
+  color: $dark-green;
+}
+
+.badScore {
+  color: $dark-error;
+}
+
+.goodScore {
+  color: $dark-green;
+}
+
+.totalScore {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  border-top: 1px solid $soft-grey;
+  margin-top: 5px;
+  padding-top: 5px;
+  font-weight: bold;
+  color: $text-grey;
+}
